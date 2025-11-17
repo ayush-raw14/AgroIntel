@@ -42,7 +42,7 @@ Low-cost precision farming platform combining IoT sensors with ML-based irrigati
 | Hardware Setup | ESP32 operational, sensors pending | ~30% |
 | Backend API | Planned (FastAPI) | 0% |
 | Database | Planned (PostgreSQL) | 0% |
-| Dashboard | Planned (HTML/JS) | 0% |
+| Dashboard | Planned (React) | 0% |
 
 ---
 
