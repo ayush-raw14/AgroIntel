@@ -50,17 +50,6 @@ We've built and validated a machine learning pipeline that predicts next-day soi
 Step 1: Generate 30 days of synthetic sensor data by running
 python gen_training_data.py
 
-Step 2: Train the prediction model by running
-python train_model.py
-
-Step 3: Make predictions and get recommendations by running
-python predict_demo.py
-
-
----
-
-### Script 1: `gen_training_data.py`
-
 **Purpose:** Generating realistic synthetic agricultural sensor data
 
 **What it does:**
@@ -68,4 +57,29 @@ python predict_demo.py
 - Simulates realistic patterns
 - Saves to `sensor_data.csv`
 
+Step 2: Train the prediction model by running
+python train_model.py
+
+**Purpose:** Trains ML model to predict next-day soil moisture
+
+**Algorithm:** Linear Regression with time-series feature engineering
+
+**What it does:**
+- Loads `sensor_data.csv`
+- Engineers time-series features (lag values, rolling averages)
+- Splits data: 80% training, 20% testing
+- Trains Linear Regression model
+- Evaluates performance (MAE, R²)
+- Saves trained model as `moisture_predictor.pkl`
+
+Step 3: Make predictions and get recommendations by running
+python predict_demo.py
+
+**Purpose:** Demonstrates predictions with irrigation recommendations
+
+**What it does:**
+- Loads trained model
+- Simulates current sensor readings (yesterday's data + rolling averages)
+- Predicts tomorrow's soil moisture
+- Generates actionable irrigation recommendation
 
