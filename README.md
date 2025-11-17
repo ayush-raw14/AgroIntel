@@ -25,16 +25,59 @@ Low-cost precision farming platform combining IoT sensors with ML-based irrigati
 - `frontend/` - React farmer dashboard
 - `docs/` - Project documentation
 
-## 📊 Project Status
+## Project Status
 
 **Current Phase:** Phase 2 - ML Pipeline Validation ✅  
 **Overall Completion:** 30%
 
 | Component | Status | Progress |
 |-----------|--------|----------|
-| ML Pipeline | Working (synthetic data) | 95% |
-| Hardware Setup | ESP32 operational, sensors pending | 30% |
+| ML Pipeline | Working (synthetic data) | ~95% |
+| Hardware Setup | ESP32 operational, sensors pending | ~30% |
 | Backend API | Planned (FastAPI) | 0% |
 | Database | Planned (PostgreSQL) | 0% |
 | Dashboard | Planned (HTML/JS) | 0% |
+
+## Phase 2: ML Pipeline (Current)
+
+### Overview
+We've built and validated a machine learning pipeline that predicts next-day soil moisture with 97% accuracy using synthetic data. This validates our approach before hardware deployment.
+
+### Quick Demo
+
+**Prerequisites:**
+cd ml_pipeline
+pip install pandas numpy scikit-learn joblib matplotlib
+
+
+**Run the scripts:**
+
+Step 1: Generate 30 days of synthetic sensor data
+python gen_training_data.py
+
+Step 2: Train the prediction model
+python train_model.py
+
+Step 3: Make predictions and get recommendations
+python predict_demo.py
+
+
+---
+
+### Script 1: `gen_training_data.py`
+
+**Purpose:** Generates realistic synthetic agricultural sensor data
+
+**What it does:**
+- Creates 720 hourly readings (30 days of data)
+- Simulates realistic patterns:
+  - Daily moisture cycles (decreases during day, increases at night)
+  - Gradual soil drying over time
+  - Temperature-humidity inverse relationship
+  - Stable soil pH with minor variations
+- Saves to `sensor_data.csv`
+
+**Output:**
+![gen_training_data.py 's Output](./images/output1.png)
+
 
