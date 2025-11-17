@@ -83,3 +83,11 @@ python predict_demo.py
 - Predicts tomorrow's soil moisture
 - Generates actionable irrigation recommendation
 
+**Decision Logic:**
+
+| Predicted Moisture | Status | Action | Irrigation |
+|-------------------|--------|--------|-----------|
+| < 30% | 🔴 CRITICAL | Immediate irrigation required | 12-15 L/acre at 6-8 AM |
+| 30-40% | 🟡 WARNING | Monitor closely | Prepare for irrigation in 24-48h |
+| 40-70% | 🟢 OPTIMAL | No irrigation needed | Save water and costs |
+| > 70% | 🔵 HIGH | Soil adequately moist | Recently watered |
