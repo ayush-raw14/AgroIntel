@@ -45,20 +45,15 @@ We've built and validated a machine learning pipeline that predicts next-day soi
 
 ### Quick Demo
 
-**Prerequisites:**
-cd ml_pipeline
-pip install pandas numpy scikit-learn joblib matplotlib
-
-
 **Run the scripts:**
 
-Step 1: Generate 30 days of synthetic sensor data
+Step 1: Generate 30 days of synthetic sensor data by running
 python gen_training_data.py
 
-Step 2: Train the prediction model
+Step 2: Train the prediction model by running
 python train_model.py
 
-Step 3: Make predictions and get recommendations
+Step 3: Make predictions and get recommendations by running
 python predict_demo.py
 
 
@@ -66,18 +61,11 @@ python predict_demo.py
 
 ### Script 1: `gen_training_data.py`
 
-**Purpose:** Generates realistic synthetic agricultural sensor data
+**Purpose:** Generating realistic synthetic agricultural sensor data
 
 **What it does:**
 - Creates 720 hourly readings (30 days of data)
-- Simulates realistic patterns:
-  - Daily moisture cycles (decreases during day, increases at night)
-  - Gradual soil drying over time
-  - Temperature-humidity inverse relationship
-  - Stable soil pH with minor variations
+- Simulates realistic patterns
 - Saves to `sensor_data.csv`
-
-**Output:**
-![gen_training_data.py 's Output](./images/output1.png)
 
 
