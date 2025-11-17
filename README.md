@@ -3,8 +3,6 @@
 ## Project Overview
 Low-cost precision farming platform combining IoT sensors with ML-based irrigation recommendations.
 
----
-
 ## Problem Statement
 
 - 70% of Indian farmers use fixed irrigation schedules → **30-40% water wastage**
